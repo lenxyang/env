@@ -55,4 +55,7 @@ M-x compile.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; 设置 gdb
-(setq gud-gdb-command-name "/home/yanglei/gnu/install/bin/gdb --annotate=3")
+; (setq gud-gdb-command-name "/home/yanglei/gnu/install/bin/gdb --annotate=3")
+
+;; Disable all version control
+(setq vc-handled-backends nil)

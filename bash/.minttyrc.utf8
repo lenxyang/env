@@ -1,0 +1,10 @@
+BoldAsFont=no
+Locale=C
+Charset=UTF-8
+FontHeight=14
+Font=Courier New
+RightClickAction=paste
+WindowShortcuts=no
+SwitchShortcuts=no
+ZoomShortcuts=no
+CursorType=block

@@ -15,10 +15,14 @@
           '(lambda ()
              (require 'xcscope)))
 
+(setq vc-handled-backends nil)
+(menu-bar-mode -1)
+(setq-default auto-save-default nil)
 
+(load-file "~/.emacs.d/site-lisp/google-c-style.el")
+(load-file "~/.emacs.d/site-lisp/ninja-mode.el")
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("BUILD\\'" . python-mode))
-(load-file "~/.emacs.d/site-lisp/google-c-style.el")
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 
 '(compile-command "make")
@@ -43,7 +47,6 @@ M-x compile.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; common
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(menu-bar-mode -1)
 (setq backup-directory-alist (quote (("." . "~/.emacs.d/backups"))))
 (setq ediff-split-window-function 'split-window-vertically)
 ;(require 'cedet)
@@ -56,6 +59,3 @@ M-x compile.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; 设置 gdb
 ; (setq gud-gdb-command-name "/home/yanglei/gnu/install/bin/gdb --annotate=3")
-
-;; Disable all version control
-(setq vc-handled-backends nil)

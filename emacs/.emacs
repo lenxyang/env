@@ -4,8 +4,6 @@
 (let ((default-directory  "~/.emacs.d/site-lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
 
-;(load-file "~/.emacs.d/site-lisp/protobuf-mode.el")
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; c++ mode
@@ -21,6 +19,8 @@
 
 (load-file "~/.emacs.d/site-lisp/google-c-style.el")
 (load-file "~/.emacs.d/site-lisp/ninja-mode.el")
+(load-file "~/.emacs.d/site-lisp/protobuf-mode.el")
+(load-file "~/.emacs.d/site-lisp/gyp.el")
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("BUILD\\'" . python-mode))
 (add-hook 'c-mode-common-hook 'google-set-c-style)

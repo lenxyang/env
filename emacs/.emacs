@@ -1,8 +1,10 @@
 
 
 
-(let ((default-directory  "~/.emacs.d/site-lisp/"))
-  (normal-top-level-add-subdirs-to-load-path))
+;(let ((default-directory  "~/.emacs.d/site-lisp/"))
+;;  (normal-top-level-add-subdirs-to-load-path))
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -17,15 +19,25 @@
 (menu-bar-mode -1)
 (setq-default auto-save-default nil)
 
+
 (load-file "~/.emacs.d/site-lisp/google-c-style.el")
 (load-file "~/.emacs.d/site-lisp/ninja-mode.el")
 (load-file "~/.emacs.d/site-lisp/protobuf-mode.el")
 (load-file "~/.emacs.d/site-lisp/gyp.el")
+(load-file "~/.emacs.d/site-lisp/hlsl-mode.el")
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("BUILD\\'" . python-mode))
+;(add-to-list 'auto-mode-alist '("\\.gyp\\'" . gyp-mode))
+;(add-to-list 'auto-mode-alist '("\\.ninja\\'" . ninja-mode))
+;(add-to-list 'auto-mode-alist '("\\.proto\\'" . protobuf-mode))
+;(add-to-list 'auto-mode-alist '("\\.hlsl\\'" . hlsl-mode))
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 
 '(compile-command "make")
+
+
+
+
 
 ; compile-again
 (global-set-key [(control c) (c)] 'compile-again)
@@ -59,3 +71,9 @@ M-x compile.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; 设置 gdb
 ; (setq gud-gdb-command-name "/home/yanglei/gnu/install/bin/gdb --annotate=3")
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
+(if window-system
+    (load-file "~/.emacs.d/win32_init.el"))
+	       

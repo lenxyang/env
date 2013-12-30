@@ -38,6 +38,7 @@
      (font-lock-preprocessor-face ((t (:foreground "blue1"))))
      (font-lock-reference-face ((t (:foreground "purple1"))))
      (font-lock-string-face ((t (:foreground "LimeGreen" :italic t))))
+
      (font-lock-type-face ((t (:bold t :foreground "gray80"))))
      (font-lock-variable-name-face ((t (:bold t :foreground "gray80"))))
      (font-lock-warning-face ((t (:bold t :foreground "red" :weight bold))))

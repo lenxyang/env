@@ -68,6 +68,15 @@ M-x compile.
 	  (lambda() 
 	    (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
 
+(require 'whitespace)
+(setq whitespace-style '(face indentation trailing empty lines-tail))
+(setq whitespace-line-column nil)
+(set-face-attribute 'whitespace-line nil
+                    :background "purple"
+                    :foreground "white"
+                    :weight 'bold)
+(global-whitespace-mode 1)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; 设置 gdb
 ; (setq gud-gdb-command-name "/home/yanglei/gnu/install/bin/gdb --annotate=3")

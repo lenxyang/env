@@ -13,12 +13,12 @@
 (setq mouse-yank-at-point t)
 
 ; 最大化窗口
-(defun maximize-frame (&optional frame) 
-   "Maximizes the active frame in Windows" 
-   (interactive) 
-   ;; Send a `WM_SYSCOMMAND' message to the active frame with the 
-   ;; `SC_MAXIMIZE' parameter. 
-   (when (eq system-type 'windows-nt) 
+(defun maximize-frame (&optional frame)
+   "Maximizes the active frame in Windows"
+   (interactive)
+   ;; Send a `WM_SYSCOMMAND' message to the active frame with the
+   ;; `SC_MAXIMIZE' parameter.
+   (when (eq system-type 'windows-nt)
      (w32-send-sys-command 61488)))
 
 
@@ -43,6 +43,8 @@
       (progn
 	(sr-speedbar-open)
 	(sr-speedbar-select-window)
+	(with-current-buffer sr-speedbar-buffer-name
+	  (setq window-size-fixed 'width))
 	)
     (progn
       (sr-speedbar-select-window)
@@ -50,12 +52,14 @@
     )
 )
 
-(sr-speedbar-open)
-(with-current-buffer sr-speedbar-buffer-name
-  (setq window-size-fixed 'width))
+
+;(sr-speedbar-open)
+;(with-current-buffer sr-speedbar-buffer-name
+;  (setq window-size-fixed 'width))
 
 ; ATL-F4 to close
 (global-set-key [M-f4] 'save-buffers-kill-emacs)
 (global-set-key [f12] 'my-speedbar-switch)
+(global-set-key [f11] 'sr-speedbar-close)
 (global-set-key [f5] 'maximize-frame)
 (global-set-key [C-tab] 'other-frame)

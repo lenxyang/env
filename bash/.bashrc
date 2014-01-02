@@ -17,13 +17,3 @@ case "$-" in
   bind  '"\ep":history-search-backward'
   bind  '"\en":history-search-forward'
 esac
-
-export PATH=$PATH:/cross/cross-ng/bin
-
-# virtual machine
-alias qemu="/cygdrive/d/Program\ Files\ \(x86\)/qemu/qemu.exe"
-alias qemu-system-i386="/cygdrive/d/Program\ Files\ \(x86\)/qemu/qemu-system-i386.exe"
-alias qemu-img="/cygdrive/d/Program\ Files\ \(x86\)/qemu/qemu-img.exe"
-alias bochs="/cygdrive/d/Program\ Files\ \(x86\)/qemu/Bochs-2.6/bochs.exe"
-alias bochs_debug="/cygdrive/d/Program\ Files\ \(x86\)/qemu/Bochs-2.6/bochsdbg.exe"
-alias bochs_gdb="/cygdrive/d/Program\ Files\ \(x86\)/qemu/Bochs-2.6/bochs_gdbstub.exe"
